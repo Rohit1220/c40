@@ -37,6 +37,7 @@ class Game {
     textSize(30);
     text("Game Start", 120, 100)
     Player.getPlayerInfo();
+    player.getcarsatend();
     if(allPlayers !== undefined){
       background("white");
       image(track,0,-displayHeight*4,displayWidth,displayHeight*4)
@@ -74,6 +75,8 @@ class Game {
       if (player.distance>3500)
   {
     gameState=2;
+    player.rank++;
+    Player.updatecarsatend(player.rank);
     }
   drawSprites();
   }
